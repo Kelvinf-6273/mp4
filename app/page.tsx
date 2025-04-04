@@ -1,78 +1,73 @@
 "use client";
 import styled from "styled-components";
+import Link from 'next/link';
 
-const StyledHeader =styled.h2`
+const StyledHeader = styled.h2`
     text-align: center;
     font-style: italic;
+    font-size: calc(2px + 2vw);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
 `;
 
-const StyleHeader1 =styled.h1`
+const StyledButton = styled(Link)`
+    text-decoration: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 1);
+    display: inline;
+    background-color: #e63946;
+
+    &:hover {
+        background-color: #c1272d;
+    }
+`;
+
+const StyleHeader1 = styled.h1`
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    font-size: calc(10px + 2vw);
+    font-size: calc(12px + 4vw);
+    color: red;
 `;
 
 const StyledWrapper = styled.div`
     display: flex;
     flex-direction: row;
     text-align: center;
-    gap:50px;
+    gap: 50px;
     align-items: center;
     justify-content: center;
     padding-top: 50px;
-    
-    
-`
+`;
 
-import Link from 'next/link';
+const PageContainer = styled.div`
+    background-color: #cce7ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
 
 export default function Home() {
     return (
-        <div>
-
-            <div>
+        <PageContainer>
             <StyleHeader1>Harvard Museum Art Collection</StyleHeader1>
-
-            </div>
-
             <StyledWrapper>
-                <Link
-                    href="/popular"
-                >
+                <StyledButton href="/popular">
                     <StyledHeader>Popular Artworks</StyledHeader>
-                </Link>
-
-                <Link
-                    href="/recent"
-                >
+                </StyledButton>
+                <StyledButton href="/recent">
                     <StyledHeader>Recent Acquisitions</StyledHeader>
-                </Link>
-
+                </StyledButton>
             </StyledWrapper>
-        </div>
+        </PageContainer>
     );
 }
 
-
-
-{/*<div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-md">*/}
-{/*    <Link*/}
-{/*        href="/popular"*/}
-{/*        className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"*/}
-{/*    >*/}
-{/*        <h2 className="text-xl font-semibold text-gray-800 mb-2">Popular Artworks</h2>*/}
-{/*        <p className="text-gray-600">View most admired pieces</p>*/}
-{/*    </Link>*/}
-
-{/*    <Link*/}
-{/*        href="/recent"*/}
-{/*        className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"*/}
-{/*    >*/}
-{/*        <h2 className="text-xl font-semibold text-gray-800 mb-2">Recent Acquisitions</h2>*/}
-{/*        <p className="text-gray-600">Discover new additions</p>*/}
-{/*    </Link>*/}
-{/*</div>*/}
 
